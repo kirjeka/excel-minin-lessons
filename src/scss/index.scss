@@ -1,3 +1,36 @@
-body{
+@import "~normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
+
+@import "src/scss/mixins";
+@import "src/scss/variable";
+
+//------------Excel page--------------
+@import "pages/excel/header";
+@import "pages/excel/toolbar";
+@import "pages/excel/formula";
+@import "pages/excel/table";
+//------------------------------------
+
+//----------DB------------
+@import "pages/dashboard/dasboard";
+//------------
+
+* {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Days One', sans-serif;
+  font-size: 12px;
+}
+
+.excel{
+  position: relative;
+  color:#888;
+  height: 100%;
+  max-width: 100%;
+
+  font-size: .8rem;
 }
