@@ -36,6 +36,36 @@ class Dom {
   off(eventType, callback) {
     this.$el.removeEventListener(eventType, callback)
   }
+
+  closest(selector) {
+    return $(this.$el.closest(selector))
+  }
+
+  getCords() {
+    return this.$el.getBoundingClientRect()
+  }
+
+  get data() {
+    return this.$el.dataset
+  }
+  findAll(selector) {
+    return this.$el.querySelectorAll(selector)
+  }
+  css(styles = {}) {
+    // --- for in проходит по всем прототипам
+    // for (const key in styles) {
+    //   if (styles.hasOwnProperty(key)) {
+    //     console.log(key)
+    //     console.log(styles[key])
+    //   }
+    // }
+    // True variant
+    Object
+        .keys(styles)
+        .forEach(key => {
+          this.$el.style[key]= styles[key]
+        })
+  }
 }
 
 
